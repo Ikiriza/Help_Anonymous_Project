@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "73112639542",
+    "project_id": "help-anonymous-app",
+    "storage_bucket": "help-anonymous-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73112639542:android:dade9507945ecfe51de097",
+        "android_client_info": {
+          "package_name": "com.mycompany.helpanonymousapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkfdmze1cwAzaQFErTy-rCNA5COBc7QeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
