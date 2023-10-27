@@ -1,24 +1,20 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'onboarding_widget.dart' show OnboardingWidget;
+import 'profile16_simple_profile_widget.dart' show Profile16SimpleProfileWidget;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class OnboardingModel extends FlutterFlowModel<OnboardingWidget> {
-  ///  State fields for stateful widgets in this page.
-
-  final unfocusNode = FocusNode();
-
+class Profile16SimpleProfileModel
+    extends FlutterFlowModel<Profile16SimpleProfileWidget> {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 
   /// Action blocks are added here.
 

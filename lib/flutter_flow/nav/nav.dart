@@ -79,13 +79,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? OnboardingWidget() : SignUpWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : Onboarding4Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? OnboardingWidget() : SignUpWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : Onboarding4Widget(),
         ),
         FFRoute(
           name: 'SignUp',
@@ -93,9 +93,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => SignUpWidget(),
         ),
         FFRoute(
-          name: 'Onboarding',
-          path: '/onboarding',
-          builder: (context, params) => OnboardingWidget(),
+          name: 'Onboarding4',
+          path: '/onboarding4',
+          builder: (context, params) => Onboarding4Widget(),
+        ),
+        FFRoute(
+          name: 'Chatsection',
+          path: '/chatsection',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Chatsection')
+              : ChatsectionWidget(),
+        ),
+        FFRoute(
+          name: 'Profile16SimpleProfile',
+          path: '/profile16SimpleProfile',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Profile16SimpleProfile')
+              : Profile16SimpleProfileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -262,7 +276,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/signUp';
+            return '/onboarding4';
           }
           return null;
         },

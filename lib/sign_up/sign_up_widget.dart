@@ -184,7 +184,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                 BorderRadius.circular(8.0),
                                             child: Image.asset(
                                               'assets/images/Help_Anonymous_see_through.png',
-                                              width: 300.0,
+                                              width: 440.0,
                                               height: 200.0,
                                               fit: BoxFit.cover,
                                             ),
@@ -307,7 +307,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                             }
 
                                                             context.goNamedAuth(
-                                                                'Onboarding',
+                                                                'Chatsection',
                                                                 context
                                                                     .mounted);
                                                           },
@@ -395,7 +395,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                                   }
 
                                                                   context.goNamedAuth(
-                                                                      'Onboarding',
+                                                                      'Chatsection',
                                                                       context
                                                                           .mounted);
                                                                 },
@@ -479,7 +479,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                   }
 
                                                   context.goNamedAuth(
-                                                      'Onboarding',
+                                                      'Chatsection',
                                                       context.mounted);
                                                 },
                                                 text: 'Get Started',
@@ -837,7 +837,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                   }
 
                                                   context.goNamedAuth(
-                                                      'Onboarding',
+                                                      'Chatsection',
                                                       context.mounted);
                                                 },
                                                 text: 'Sign In',
@@ -934,7 +934,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                       }
 
                                                       context.goNamedAuth(
-                                                          'Onboarding',
+                                                          'Chatsection',
                                                           context.mounted);
                                                     },
                                                     text:
@@ -1012,7 +1012,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                             }
 
                                                             context.goNamedAuth(
-                                                                'Onboarding',
+                                                                'Chatsection',
                                                                 context
                                                                     .mounted);
                                                           },
@@ -1095,7 +1095,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                   }
 
                                                   context.goNamedAuth(
-                                                      'Onboarding',
+                                                      'Chatsection',
                                                       context.mounted);
                                                 },
                                                 text: 'Forgot Password?',
