@@ -79,23 +79,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : Onboarding4Widget(),
+          appStateNotifier.loggedIn ? NavBarPage() : Onboarding2Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : Onboarding4Widget(),
-        ),
-        FFRoute(
-          name: 'SignUp',
-          path: '/signUp',
-          builder: (context, params) => SignUpWidget(),
-        ),
-        FFRoute(
-          name: 'Onboarding4',
-          path: '/onboarding4',
-          builder: (context, params) => Onboarding4Widget(),
+              appStateNotifier.loggedIn ? NavBarPage() : Onboarding2Widget(),
         ),
         FFRoute(
           name: 'Chatsection',
@@ -110,6 +100,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Profile16SimpleProfile')
               : Profile16SimpleProfileWidget(),
+        ),
+        FFRoute(
+          name: 'LoginPage',
+          path: '/loginPage',
+          builder: (context, params) => LoginPageWidget(),
+        ),
+        FFRoute(
+          name: 'Login2',
+          path: '/login2',
+          builder: (context, params) => Login2Widget(),
+        ),
+        FFRoute(
+          name: 'Onboarding2',
+          path: '/onboarding2',
+          builder: (context, params) => Onboarding2Widget(),
+        ),
+        FFRoute(
+          name: 'SelfAssesmentList',
+          path: '/selfAssesmentList',
+          builder: (context, params) => SelfAssesmentListWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -276,7 +286,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/onboarding4';
+            return '/onboarding2';
           }
           return null;
         },

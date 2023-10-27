@@ -1,7 +1,8 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,52 +54,32 @@ class _Profile16SimpleProfileWidgetState
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: Color(0xFF40A069),
         automaticallyImplyLeading: false,
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30.0,
+          borderWidth: 1.0,
+          buttonSize: 60.0,
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.white,
+            size: 30.0,
+          ),
+          onPressed: () async {
+            context.pop();
+          },
+        ),
         title: Text(
           'My Profile',
           style: FlutterFlowTheme.of(context).displaySmall.override(
                 fontFamily: 'Outfit',
-                color: FlutterFlowTheme.of(context).primaryText,
+                color: FlutterFlowTheme.of(context).primaryBackground,
               ),
         ),
-        actions: [
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 16.0, 0.0),
-            child: Container(
-              width: 44.0,
-              height: 44.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).accent1,
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: FlutterFlowTheme.of(context).primary,
-                  width: 2.0,
-                ),
-              ),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
-                child: Container(
-                  width: 50.0,
-                  height: 50.0,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  child: CachedNetworkImage(
-                    fadeInDuration: Duration(milliseconds: 500),
-                    fadeOutDuration: Duration(milliseconds: 500),
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1512243753-2d6941bef6a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxmb2xpYWdlfGVufDB8fHx8MTY5ODMyMDYxN3ww&ixlib=rb-4.0.3&q=80&w=1080',
-                    fit: BoxFit.fitWidth,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
+        actions: [],
         centerTitle: false,
-        elevation: 0.0,
+        elevation: 2.0,
       ),
       body: SafeArea(
         top: true,
@@ -452,8 +433,12 @@ class _Profile16SimpleProfileWidgetState
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      GoRouter.of(context).prepareAuthEvent();
+                      await authManager.signOut();
+                      GoRouter.of(context).clearRedirectLocation();
+
+                      context.goNamedAuth('Onboarding2', context.mounted);
                     },
                     text: 'Log Out',
                     options: FFButtonOptions(

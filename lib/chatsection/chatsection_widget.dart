@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -56,20 +57,33 @@ class _ChatsectionWidgetState extends State<ChatsectionWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Color(0xFFF1F4F8),
+          backgroundColor: Color(0xFF40A069),
           automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
           title: Text(
-            'Demo 1',
-            style: FlutterFlowTheme.of(context).headlineLarge.override(
-                  fontFamily: 'Urbanist',
-                  color: Color(0xFF0B191E),
-                  fontSize: 36.0,
-                  fontWeight: FontWeight.normal,
+            'Demo Chat',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Outfit',
+                  color: Colors.white,
+                  fontSize: 22.0,
                 ),
           ),
           actions: [],
-          centerTitle: true,
-          elevation: 0.0,
+          centerTitle: false,
+          elevation: 2.0,
         ),
         body: Align(
           alignment: AlignmentDirectional(0.00, 0.00),
@@ -490,114 +504,6 @@ class _ChatsectionWidgetState extends State<ChatsectionWidget> {
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 60.0,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF1F4F8),
-                    ),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(6.0, 6.0, 6.0, 6.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                6.0, 0.0, 6.0, 0.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(32.0),
-                              child: Image.network(
-                                'https://images.unsplash.com/photo-1622234365860-c8ae2e35b56c?w=800&h=500',
-                                width: 40.0,
-                                height: 25.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                6.0, 0.0, 6.0, 0.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(32.0),
-                              child: Image.network(
-                                'https://images.unsplash.com/photo-1584947113970-7d730f565515?w=800&h=500',
-                                width: 40.0,
-                                height: 25.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                6.0, 0.0, 6.0, 0.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(32.0),
-                              child: Image.network(
-                                'https://images.unsplash.com/photo-1583484963886-cfe2bff2945f?w=800&h=500',
-                                width: 40.0,
-                                height: 25.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                6.0, 0.0, 6.0, 0.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(32.0),
-                              child: Image.network(
-                                'https://images.unsplash.com/photo-1583413230888-c7b03057be03?w=800&h=500',
-                                width: 40.0,
-                                height: 25.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                6.0, 0.0, 6.0, 0.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(32.0),
-                              child: Image.network(
-                                'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=500',
-                                width: 40.0,
-                                height: 25.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                6.0, 0.0, 6.0, 0.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(32.0),
-                              child: Image.network(
-                                'https://images.unsplash.com/photo-1583413231098-f4ee1ee7ec8b?w=800&h=500',
-                                width: 40.0,
-                                height: 25.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                6.0, 0.0, 6.0, 0.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(32.0),
-                              child: Image.network(
-                                'https://images.unsplash.com/photo-1581092800573-6afa755dcdc7?w=800&h=500',
-                                width: 40.0,
-                                height: 25.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                     ),
                   ),
                 ],
