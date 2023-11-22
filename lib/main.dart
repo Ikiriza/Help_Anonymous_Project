@@ -114,7 +114,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPageName = 'Profile16SimpleProfile';
+  String _currentPageName = 'chat_Main';
   late Widget? _currentPage;
 
   @override
@@ -127,8 +127,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'Chatsection': ChatsectionWidget(),
-      'Profile16SimpleProfile': Profile16SimpleProfileWidget(),
+      'SelfAssesmentList': SelfAssesmentListWidget(),
+      'chat_Main': ChatMainWidget(),
+      'auth_2_Profile': Auth2ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -149,21 +150,26 @@ class _NavBarPageState extends State<NavBarPage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.chat,
+              Icons.text_snippet,
+              size: 24.0,
             ),
-            label: '',
+            label: 'Home',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person_outline,
+              Icons.forum_outlined,
               size: 24.0,
             ),
-            activeIcon: Icon(
+            label: 'Chat',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               Icons.person,
               size: 24.0,
             ),
-            label: '__',
+            label: 'Home',
             tooltip: '',
           )
         ],

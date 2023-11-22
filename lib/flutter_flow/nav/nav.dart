@@ -79,47 +79,89 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : Onboarding2Widget(),
+          appStateNotifier.loggedIn ? NavBarPage() : OnboardingWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : Onboarding2Widget(),
-        ),
-        FFRoute(
-          name: 'Chatsection',
-          path: '/chatsection',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Chatsection')
-              : ChatsectionWidget(),
-        ),
-        FFRoute(
-          name: 'Profile16SimpleProfile',
-          path: '/profile16SimpleProfile',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Profile16SimpleProfile')
-              : Profile16SimpleProfileWidget(),
-        ),
-        FFRoute(
-          name: 'LoginPage',
-          path: '/loginPage',
-          builder: (context, params) => LoginPageWidget(),
-        ),
-        FFRoute(
-          name: 'Login2',
-          path: '/login2',
-          builder: (context, params) => Login2Widget(),
-        ),
-        FFRoute(
-          name: 'Onboarding2',
-          path: '/onboarding2',
-          builder: (context, params) => Onboarding2Widget(),
+              appStateNotifier.loggedIn ? NavBarPage() : OnboardingWidget(),
         ),
         FFRoute(
           name: 'SelfAssesmentList',
           path: '/selfAssesmentList',
-          builder: (context, params) => SelfAssesmentListWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'SelfAssesmentList')
+              : SelfAssesmentListWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_Create',
+          path: '/auth2Create',
+          builder: (context, params) => Auth2CreateWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_Login',
+          path: '/auth2Login',
+          builder: (context, params) => Auth2LoginWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_ForgotPassword',
+          path: '/auth2ForgotPassword',
+          builder: (context, params) => Auth2ForgotPasswordWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_createProfile',
+          path: '/auth2CreateProfile',
+          builder: (context, params) => Auth2CreateProfileWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_Profile',
+          path: '/auth2Profile',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'auth_2_Profile')
+              : Auth2ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_EditProfile',
+          path: '/auth2EditProfile',
+          builder: (context, params) => Auth2EditProfileWidget(),
+        ),
+        FFRoute(
+          name: 'chat_Main',
+          path: '/chatMain',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'chat_Main')
+              : ChatMainWidget(),
+        ),
+        FFRoute(
+          name: 'chat_Details',
+          path: '/chatDetails',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => ChatDetailsWidget(
+            chatRef: params.getParam('chatRef', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'chat_InviteUsers',
+          path: '/chatInviteUsers',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => ChatInviteUsersWidget(
+            chatRef: params.getParam('chatRef', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'onboarding',
+          path: '/onboarding',
+          builder: (context, params) => OnboardingWidget(),
+        ),
+        FFRoute(
+          name: 'Quizpageone',
+          path: '/quizpageone',
+          builder: (context, params) => QuizpageoneWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -286,7 +328,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/onboarding2';
+            return '/onboarding';
           }
           return null;
         },
@@ -299,15 +341,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: FlutterFlowTheme.of(context).info,
+                  child: Image.asset(
+                    'assets/images/Help_Anonymous_NEW.jpg',
+                    fit: BoxFit.none,
                   ),
                 )
               : page;

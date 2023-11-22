@@ -116,7 +116,7 @@ class _SelfAssesmentListWidgetState extends State<SelfAssesmentListWidget>
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.safePop();
             },
           ),
           title: Text(
@@ -783,7 +783,7 @@ class _SelfAssesmentListWidgetState extends State<SelfAssesmentListWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('Chatsection');
+                    context.pushNamed('chat_Main');
                   },
                   text: 'Take the assesment',
                   options: FFButtonOptions(
