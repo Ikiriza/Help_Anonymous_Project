@@ -1,6 +1,6 @@
 # Help Anonymous
 
-![Help Anonymous Logo](images/logo.png)
+![Help Anonymous Logo](HelpAnonymousNEW.jpg)
 
 ## Team Members and Roles
 - **Ashaba Joshua Jasper** - Project Manager & Lead Developer
