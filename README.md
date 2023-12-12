@@ -37,12 +37,8 @@ Our platform features anonymous peer-to-peer chat, AI-driven self-assessment too
 
 ## Download the App
 Scan this QR code to download the 'Help Anonymous' app:
+
+  
 ![QR Code](Download%20HA%20App.png)
 
-## Promotional Material
-Check out our promotional posters:
-![Promotional Poster 1](images/poster1.png)
-![Promotional Poster 2](images/poster2.png)
-![Promotional Poster 3](images/poster3.png)
-![Promotional Poster 4](images/poster4.png)
-![Promotional Poster 5](images/poster5.png)
+
