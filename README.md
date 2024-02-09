@@ -8,6 +8,7 @@
 - **Karongo Kansiime** - Marketing & Outreach Coordinator
 - **Okello Nahum** - Backend Developer & Data Security Specialist
 - **Namale Lisa Amanda** - Quality Assurance Lead & User Support
+- **Gensi Collin Ikiriza** - Community Manager & User Support
 
 ## Project Overview
 "Help Anonymous" is a pioneering digital platform focused on providing anonymous mental health support. It aligns with the United Nations' Sustainable Development Goals (SDGs), particularly SDG 3 (Good Health and Well-being) and SDG 10 (Reduced Inequalities). Our mission is to offer a safe, inclusive, and accessible environment for individuals to discuss mental health concerns, obtain support, and access educational resources.
